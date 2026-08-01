@@ -1,0 +1,64 @@
+{
+  "name": "Listing",
+  "type": "object",
+  "properties": {
+    "address": {
+      "type": "string"
+    },
+    "city": {
+      "type": "string"
+    },
+    "price": {
+      "type": "number"
+    },
+    "bedrooms": {
+      "type": "number"
+    },
+    "bathrooms": {
+      "type": "number"
+    },
+    "sqft": {
+      "type": "number"
+    },
+    "property_type": {
+      "type": "string",
+      "enum": [
+        "single_family",
+        "condo",
+        "townhouse",
+        "multi_family",
+        "land"
+      ],
+      "default": "single_family"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "coming_soon",
+        "active",
+        "pending",
+        "sold"
+      ],
+      "default": "active"
+    },
+    "features": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "description": {
+      "type": "string"
+    },
+    "photo_url": {
+      "type": "string"
+    },
+    "commission_rate": {
+      "type": "number",
+      "default": 3
+    }
+  },
+  "required": [
+    "address"
+  ]
+}

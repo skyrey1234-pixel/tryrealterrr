@@ -1,0 +1,117 @@
+{
+  "name": "Lead",
+  "type": "object",
+  "properties": {
+    "full_name": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string"
+    },
+    "phone": {
+      "type": "string"
+    },
+    "lead_type": {
+      "type": "string",
+      "enum": [
+        "buyer",
+        "seller"
+      ],
+      "default": "buyer"
+    },
+    "source": {
+      "type": "string",
+      "enum": [
+        "website",
+        "open_house",
+        "referral",
+        "social",
+        "manual",
+        "past_client"
+      ],
+      "default": "manual"
+    },
+    "temperature": {
+      "type": "string",
+      "enum": [
+        "hot",
+        "warm",
+        "long_term",
+        "unqualified"
+      ],
+      "default": "warm"
+    },
+    "score": {
+      "type": "number"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "new",
+        "contacted",
+        "qualified",
+        "showing",
+        "under_contract",
+        "closed",
+        "lost"
+      ],
+      "default": "new"
+    },
+    "area": {
+      "type": "string"
+    },
+    "budget_min": {
+      "type": "number"
+    },
+    "budget_max": {
+      "type": "number"
+    },
+    "bedrooms": {
+      "type": "number"
+    },
+    "pre_approved": {
+      "type": "boolean"
+    },
+    "timeline": {
+      "type": "string"
+    },
+    "working_with_agent": {
+      "type": "boolean"
+    },
+    "property_address": {
+      "type": "string"
+    },
+    "reason_for_selling": {
+      "type": "string"
+    },
+    "expected_price": {
+      "type": "number"
+    },
+    "has_mortgage": {
+      "type": "boolean"
+    },
+    "notes": {
+      "type": "string"
+    },
+    "ai_summary": {
+      "type": "string"
+    },
+    "estimated_commission": {
+      "type": "number"
+    },
+    "next_followup_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "last_contacted": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "open_house_id": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "full_name"
+  ]
+}

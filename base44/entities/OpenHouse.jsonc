@@ -1,0 +1,33 @@
+{
+  "name": "OpenHouse",
+  "type": "object",
+  "properties": {
+    "listing_id": {
+      "type": "string"
+    },
+    "address": {
+      "type": "string"
+    },
+    "date": {
+      "type": "string",
+      "format": "date"
+    },
+    "start_time": {
+      "type": "string"
+    },
+    "end_time": {
+      "type": "string"
+    },
+    "notes": {
+      "type": "string"
+    },
+    "visitor_count": {
+      "type": "number",
+      "default": 0
+    }
+  },
+  "required": [
+    "address",
+    "date"
+  ]
+}

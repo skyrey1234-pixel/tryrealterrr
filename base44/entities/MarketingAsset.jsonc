@@ -1,0 +1,36 @@
+{
+  "name": "MarketingAsset",
+  "type": "object",
+  "properties": {
+    "listing_id": {
+      "type": "string"
+    },
+    "address": {
+      "type": "string"
+    },
+    "tone": {
+      "type": "string"
+    },
+    "mls_description": {
+      "type": "string"
+    },
+    "instagram_caption": {
+      "type": "string"
+    },
+    "facebook_post": {
+      "type": "string"
+    },
+    "reel_script": {
+      "type": "string"
+    },
+    "email_announcement": {
+      "type": "string"
+    },
+    "sms_campaign": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "address"
+  ]
+}

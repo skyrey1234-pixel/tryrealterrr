@@ -1,0 +1,41 @@
+{
+  "name": "Showing",
+  "type": "object",
+  "properties": {
+    "lead_id": {
+      "type": "string"
+    },
+    "lead_name": {
+      "type": "string"
+    },
+    "listing_id": {
+      "type": "string"
+    },
+    "address": {
+      "type": "string"
+    },
+    "date": {
+      "type": "string",
+      "format": "date"
+    },
+    "time": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "scheduled",
+        "confirmed",
+        "completed",
+        "cancelled"
+      ],
+      "default": "scheduled"
+    },
+    "feedback": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "date"
+  ]
+}
