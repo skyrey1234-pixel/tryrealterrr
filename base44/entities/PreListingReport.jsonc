@@ -1,0 +1,138 @@
+{
+  "name": "PreListingReport",
+  "type": "object",
+  "properties": {
+    "address": {
+      "type": "string"
+    },
+    "city": {
+      "type": "string"
+    },
+    "bedrooms": {
+      "type": "number"
+    },
+    "bathrooms": {
+      "type": "number"
+    },
+    "sqft": {
+      "type": "number"
+    },
+    "year_built": {
+      "type": "number"
+    },
+    "condition_notes": {
+      "type": "string"
+    },
+    "agent_opinion_of_value": {
+      "type": "number"
+    },
+    "mortgage_balance": {
+      "type": "number"
+    },
+    "comps": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "address": {
+            "type": "string"
+          },
+          "sold_price": {
+            "type": "number"
+          },
+          "sqft": {
+            "type": "number"
+          },
+          "days_on_market": {
+            "type": "number"
+          },
+          "notes": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "market_summary": {
+      "type": "string"
+    },
+    "buyer_segments": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "preparation_steps": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "launch_strategy": {
+      "type": "string"
+    },
+    "marketing_preview": {
+      "type": "string"
+    },
+    "strategies": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "positioning": {
+            "type": "string"
+          },
+          "list_price": {
+            "type": "number"
+          },
+          "days_on_market_range": {
+            "type": "string"
+          },
+          "goal": {
+            "type": "string"
+          },
+          "tradeoffs": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "renovation_options": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string"
+          },
+          "cost_range": {
+            "type": "string"
+          },
+          "probable_effect": {
+            "type": "string"
+          },
+          "return_range": {
+            "type": "string"
+          },
+          "recommendation": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "seller_proceeds_notes": {
+      "type": "string"
+    },
+    "photo_urls": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "required": [
+    "address"
+  ]
+}

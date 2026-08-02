@@ -1,0 +1,82 @@
+{
+  "name": "SellerProspect",
+  "type": "object",
+  "properties": {
+    "full_name": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string"
+    },
+    "phone": {
+      "type": "string"
+    },
+    "property_address": {
+      "type": "string"
+    },
+    "area": {
+      "type": "string"
+    },
+    "signal_type": {
+      "type": "string",
+      "enum": [
+        "past_client",
+        "valuation_request",
+        "expired_listing",
+        "withdrawn_listing",
+        "old_buyer_lead",
+        "inherited_property",
+        "investor_owned",
+        "content_engagement",
+        "direct_mail_qr",
+        "long_tenure"
+      ],
+      "default": "valuation_request"
+    },
+    "years_owned": {
+      "type": "number"
+    },
+    "estimated_value": {
+      "type": "number"
+    },
+    "estimated_mortgage_balance": {
+      "type": "number"
+    },
+    "engagement_notes": {
+      "type": "string"
+    },
+    "opportunity_score": {
+      "type": "number"
+    },
+    "score_reasons": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "recommended_action": {
+      "type": "string"
+    },
+    "stage": {
+      "type": "string",
+      "enum": [
+        "identified",
+        "nurturing",
+        "appointment_set",
+        "listing_won",
+        "not_now"
+      ],
+      "default": "identified"
+    },
+    "appointment_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "lead_id": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "full_name"
+  ]
+}

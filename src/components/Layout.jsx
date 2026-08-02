@@ -1,11 +1,15 @@
 import React, { useState } from 'react';
 import { Outlet, Link, useLocation } from 'react-router-dom';
-import { LayoutDashboard, Users, Home, QrCode, Sparkles, CalendarDays, Menu, X, LogOut } from 'lucide-react';
+import { LayoutDashboard, Users, Home, QrCode, Sparkles, CalendarDays, Menu, X, LogOut, TrendingUp, ClipboardList, Heart, Activity } from 'lucide-react';
 import { base44 } from '@/api/base44Client';
 
 const nav = [
   { to: '/', label: 'Dashboard', icon: LayoutDashboard },
   { to: '/leads', label: 'Leads', icon: Users },
+  { to: '/seller-engine', label: 'Seller Engine', icon: TrendingUp },
+  { to: '/pre-listing', label: 'Pre-Listing', icon: ClipboardList },
+  { to: '/buyer-match', label: 'Buyer Match', icon: Heart },
+  { to: '/transactions', label: 'Transactions', icon: Activity },
   { to: '/listings', label: 'Listings', icon: Home },
   { to: '/marketing', label: 'Listing Marketing', icon: Sparkles },
   { to: '/open-houses', label: 'Open Houses', icon: QrCode },

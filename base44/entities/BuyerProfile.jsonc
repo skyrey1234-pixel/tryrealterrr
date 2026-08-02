@@ -1,0 +1,97 @@
+{
+  "name": "BuyerProfile",
+  "type": "object",
+  "properties": {
+    "lead_id": {
+      "type": "string"
+    },
+    "lead_name": {
+      "type": "string"
+    },
+    "lifestyle_description": {
+      "type": "string"
+    },
+    "criteria": {
+      "type": "object",
+      "properties": {
+        "min_bedrooms": {
+          "type": "number"
+        },
+        "min_bathrooms": {
+          "type": "number"
+        },
+        "budget_max": {
+          "type": "number"
+        },
+        "needs_office": {
+          "type": "boolean"
+        },
+        "needs_yard": {
+          "type": "boolean"
+        },
+        "condition_preference": {
+          "type": "string"
+        },
+        "max_commute_minutes": {
+          "type": "number"
+        },
+        "must_haves": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "nice_to_haves": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "dealbreakers": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "learned_preferences": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "showing_reactions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "address": {
+            "type": "string"
+          },
+          "raw_note": {
+            "type": "string"
+          },
+          "liked": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "disliked": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "created_at": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  },
+  "required": [
+    "lead_name"
+  ]
+}

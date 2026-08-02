@@ -21,6 +21,10 @@ import Marketing from '@/pages/Marketing';
 import OpenHouses from '@/pages/OpenHouses';
 import Showings from '@/pages/Showings';
 import CheckIn from '@/pages/CheckIn';
+import SellerEngine from '@/pages/SellerEngine';
+import PreListing from '@/pages/PreListing';
+import BuyerMatch from '@/pages/BuyerMatch';
+import Transactions from '@/pages/Transactions';
 
 const AuthenticatedApp = () => {
   const { isLoadingAuth, isLoadingPublicSettings, authError, navigateToLogin } = useAuth();
@@ -58,6 +62,10 @@ const AuthenticatedApp = () => {
           <Route path="/" element={<Dashboard />} />
           <Route path="/leads" element={<Leads />} />
           <Route path="/leads/:id" element={<LeadDetail />} />
+          <Route path="/seller-engine" element={<SellerEngine />} />
+          <Route path="/pre-listing" element={<PreListing />} />
+          <Route path="/buyer-match" element={<BuyerMatch />} />
+          <Route path="/transactions" element={<Transactions />} />
           <Route path="/listings" element={<Listings />} />
           <Route path="/marketing" element={<Marketing />} />
           <Route path="/open-houses" element={<OpenHouses />} />

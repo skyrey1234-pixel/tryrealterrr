@@ -1,0 +1,103 @@
+{
+  "name": "Transaction",
+  "type": "object",
+  "properties": {
+    "address": {
+      "type": "string"
+    },
+    "side": {
+      "type": "string",
+      "enum": [
+        "buy",
+        "sell"
+      ],
+      "default": "buy"
+    },
+    "client_name": {
+      "type": "string"
+    },
+    "lead_id": {
+      "type": "string"
+    },
+    "listing_id": {
+      "type": "string"
+    },
+    "purchase_price": {
+      "type": "number"
+    },
+    "commission_rate": {
+      "type": "number",
+      "default": 3
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "under_contract",
+        "pending_close",
+        "closed",
+        "fell_through"
+      ],
+      "default": "under_contract"
+    },
+    "contract_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "inspection_deadline": {
+      "type": "string",
+      "format": "date"
+    },
+    "appraisal_deadline": {
+      "type": "string",
+      "format": "date"
+    },
+    "financing_deadline": {
+      "type": "string",
+      "format": "date"
+    },
+    "closing_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "inspection_complete": {
+      "type": "boolean"
+    },
+    "appraisal_complete": {
+      "type": "boolean"
+    },
+    "financing_cleared": {
+      "type": "boolean"
+    },
+    "title_cleared": {
+      "type": "boolean"
+    },
+    "insurance_bound": {
+      "type": "boolean"
+    },
+    "docs_complete": {
+      "type": "boolean"
+    },
+    "open_issues": {
+      "type": "string"
+    },
+    "health_score": {
+      "type": "number"
+    },
+    "primary_risk": {
+      "type": "string"
+    },
+    "recommended_actions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "last_analyzed": {
+      "type": "string",
+      "format": "date-time"
+    }
+  },
+  "required": [
+    "address"
+  ]
+}
