@@ -31,12 +31,12 @@ export default function CheckIn() {
     setSaving(false); setDone(true);
   };
 
-  if (oh === false) return <div className="min-h-screen bg-[#0B0D10] flex items-center justify-center text-neutral-500">Open house not found.</div>;
+  if (oh === false) return <div className="min-h-screen bg-ocean-900 flex items-center justify-center text-neutral-500">Open house not found.</div>;
 
   return (
-    <div className="min-h-screen bg-[#0B0D10] px-5 py-16 text-neutral-200">
+    <div className="min-h-screen bg-gradient-to-b from-ocean-800 via-ocean-900 to-[#0B1A24] px-5 py-16 text-neutral-200">
       <div className="mx-auto max-w-md">
-        <div className="text-[11px] uppercase tracking-[0.28em] text-amber-500/80">Open House</div>
+        <div className="text-[11px] uppercase tracking-[0.28em] text-sand-300">Open House</div>
         <h1 className="mt-2 text-3xl font-semibold tracking-tight text-white">{oh?.address || 'Welcome'}</h1>
         <p className="mt-3 text-sm leading-relaxed text-neutral-400">Sign in below and we'll send you the details on this home plus similar listings.</p>
 

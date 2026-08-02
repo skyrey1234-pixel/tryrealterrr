@@ -9,7 +9,7 @@ export default function QrPanel({ openHouse, open, onOpenChange }) {
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="bg-[#0E1115] border-white/10 text-neutral-200">
+      <DialogContent className="bg-ocean-900 border-ocean-300/20 text-neutral-200">
         <DialogHeader><DialogTitle className="text-white">Open house check-in</DialogTitle></DialogHeader>
         <Panel className="p-6 text-center">
           <img src={qr} alt="Open house QR code" className="mx-auto rounded-xl bg-white p-3" />

@@ -24,7 +24,7 @@ export default function LeadForm({ open, onOpenChange, onSaved }) {
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="bg-[#0E1115] border-white/10 text-neutral-200">
+      <DialogContent className="bg-ocean-900 border-ocean-300/20 text-neutral-200">
         <DialogHeader><DialogTitle className="text-white">Add lead</DialogTitle></DialogHeader>
         <form onSubmit={submit} className="space-y-3">
           <Input required placeholder="Full name" value={form.full_name} onChange={set('full_name')} className={field} />

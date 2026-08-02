@@ -17,22 +17,22 @@ export default function Layout() {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="min-h-screen bg-[#0B0D10] text-neutral-200">
+    <div className="min-h-screen bg-gradient-to-br from-ocean-900 via-[#06202A] to-[#0B1A24] text-neutral-200">
       <button onClick={() => setOpen(!open)} className="lg:hidden fixed top-4 left-4 z-50 p-2 rounded-xl bg-white/5 border border-white/10 backdrop-blur">
         {open ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
       </button>
 
-      <aside className={`fixed inset-y-0 left-0 z-40 w-64 border-r border-white/5 bg-[#0E1115] px-5 py-8 transition-transform duration-300 ${open ? 'translate-x-0' : '-translate-x-full'} lg:translate-x-0`}>
+      <aside className={`fixed inset-y-0 left-0 z-40 w-64 border-r border-ocean-300/10 bg-gradient-to-b from-ocean-800/70 to-[#07222B] px-5 py-8 transition-transform duration-300 ${open ? 'translate-x-0' : '-translate-x-full'} lg:translate-x-0`}>
         <div className="mb-10 pl-1">
-          <div className="text-[11px] tracking-[0.28em] text-amber-500/80 uppercase">Realtor</div>
-          <div className="text-xl font-semibold tracking-tight text-white">Command AI</div>
+          <div className="text-[11px] tracking-[0.28em] text-ocean-300 uppercase">Realtor</div>
+          <div className="text-xl font-semibold tracking-tight bg-gradient-to-r from-white via-sand-200 to-ocean-200 bg-clip-text text-transparent">Command AI</div>
         </div>
         <nav className="space-y-1">
           {nav.map(({ to, label, icon: Icon }) => {
             const active = pathname === to;
             return (
               <Link key={to} to={to} onClick={() => setOpen(false)}
-                className={`flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm transition-all duration-200 ${active ? 'bg-white/[0.07] text-white' : 'text-neutral-400 hover:text-white hover:bg-white/[0.04]'}`}>
+                className={`flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm transition-all duration-200 ${active ? 'bg-ocean-400/15 text-white ring-1 ring-ocean-300/20' : 'text-ocean-100/70 hover:text-white hover:bg-white/[0.05]'}`}>
                 <Icon className={`w-4 h-4 ${active ? 'text-amber-500' : ''}`} />
                 {label}
               </Link>

@@ -62,7 +62,7 @@ export default function OpenHouses() {
       </div>
 
       <Dialog open={creating} onOpenChange={setCreating}>
-        <DialogContent className="bg-[#0E1115] border-white/10 text-neutral-200">
+        <DialogContent className="bg-ocean-900 border-white/10 text-neutral-200">
           <DialogHeader><DialogTitle className="text-white">New open house</DialogTitle></DialogHeader>
           <form onSubmit={submit} className="space-y-3">
             <Input required placeholder="Property address" value={form.address} onChange={set('address')} className={field} />

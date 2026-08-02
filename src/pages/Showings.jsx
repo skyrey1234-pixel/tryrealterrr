@@ -58,23 +58,23 @@ export default function Showings() {
             </div>
             <select value={s.status} onChange={(e) => updateStatus(s, e.target.value)}
               className="rounded-full border border-white/10 bg-white/[0.03] px-3 py-1.5 text-xs capitalize text-neutral-300">
-              {STATUSES.map((st) => <option key={st} value={st} className="bg-[#0E1115]">{st}</option>)}
+              {STATUSES.map((st) => <option key={st} value={st} className="bg-ocean-900">{st}</option>)}
             </select>
           </div>
         ))}
       </Panel>
 
       <Dialog open={creating} onOpenChange={setCreating}>
-        <DialogContent className="bg-[#0E1115] border-white/10 text-neutral-200">
+        <DialogContent className="bg-ocean-900 border-white/10 text-neutral-200">
           <DialogHeader><DialogTitle className="text-white">Schedule showing</DialogTitle></DialogHeader>
           <form onSubmit={submit} className="space-y-3">
             <select required value={form.lead_id} onChange={set('lead_id')} className={select}>
               <option value="">Select buyer</option>
-              {leads.map((l) => <option key={l.id} value={l.id} className="bg-[#0E1115]">{l.full_name}</option>)}
+              {leads.map((l) => <option key={l.id} value={l.id} className="bg-ocean-900">{l.full_name}</option>)}
             </select>
             <select required value={form.listing_id} onChange={set('listing_id')} className={select}>
               <option value="">Select property</option>
-              {listings.map((l) => <option key={l.id} value={l.id} className="bg-[#0E1115]">{l.address}</option>)}
+              {listings.map((l) => <option key={l.id} value={l.id} className="bg-ocean-900">{l.address}</option>)}
             </select>
             <div className="grid grid-cols-2 gap-3">
               <Input required type="date" value={form.date} onChange={set('date')} className={field} />

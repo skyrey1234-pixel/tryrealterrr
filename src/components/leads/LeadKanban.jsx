@@ -4,12 +4,12 @@ import KanbanCard from '@/components/leads/KanbanCard';
 import { money, leadCommission } from '@/lib/commission';
 
 export const STAGES = [
-  { key: 'new', label: 'New' },
-  { key: 'contacted', label: 'Contacted' },
-  { key: 'qualified', label: 'Qualified' },
-  { key: 'showing', label: 'Showing' },
-  { key: 'under_contract', label: 'Under Contract' },
-  { key: 'closed', label: 'Closed' },
+  { key: 'new', label: 'New', dot: 'bg-ocean-300' },
+  { key: 'contacted', label: 'Contacted', dot: 'bg-sand-300' },
+  { key: 'qualified', label: 'Qualified', dot: 'bg-amber-400' },
+  { key: 'showing', label: 'Showing', dot: 'bg-fuchsia-400' },
+  { key: 'under_contract', label: 'Under Contract', dot: 'bg-violet-400' },
+  { key: 'closed', label: 'Closed', dot: 'bg-emerald-400' },
 ];
 
 export default function LeadKanban({ leads, onMove }) {
@@ -31,7 +31,9 @@ export default function LeadKanban({ leads, onMove }) {
                 <div ref={provided.innerRef} {...provided.droppableProps}
                   className={`w-72 shrink-0 rounded-2xl border p-3 transition-colors duration-200 ${snapshot.isDraggingOver ? 'border-amber-500/30 bg-amber-500/[0.04]' : 'border-white/[0.06] bg-white/[0.02]'}`}>
                   <div className="mb-3 flex items-baseline justify-between px-1">
-                    <div className="text-[11px] uppercase tracking-[0.2em] text-neutral-400">{stage.label}</div>
+                    <div className="flex items-center gap-2 text-[11px] uppercase tracking-[0.2em] text-neutral-300">
+                      <span className={`h-1.5 w-1.5 rounded-full ${stage.dot}`} />{stage.label}
+                    </div>
                     <div className="text-[11px] text-neutral-600 tabular-nums">{items.length}</div>
                   </div>
                   <div className="mb-3 px-1 text-[11px] text-neutral-600 tabular-nums">{money(total)} est.</div>

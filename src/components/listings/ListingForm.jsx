@@ -27,7 +27,7 @@ export default function ListingForm({ open, onOpenChange, onSaved }) {
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="bg-[#0E1115] border-white/10 text-neutral-200">
+      <DialogContent className="bg-ocean-900 border-ocean-300/20 text-neutral-200">
         <DialogHeader><DialogTitle className="text-white">Add listing</DialogTitle></DialogHeader>
         <form onSubmit={submit} className="space-y-3">
           <Input required placeholder="Address" value={form.address} onChange={set('address')} className={field} />

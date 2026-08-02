@@ -56,7 +56,7 @@ export default function Marketing() {
             <select value={selected} onChange={(e) => setSelected(e.target.value)}
               className="mt-2 w-full rounded-xl border border-white/10 bg-white/[0.03] px-3 py-2.5 text-sm text-white">
               {listings.length === 0 && <option value="">Add a listing first</option>}
-              {listings.map((l) => <option key={l.id} value={l.id} className="bg-[#0E1115]">{l.address}</option>)}
+              {listings.map((l) => <option key={l.id} value={l.id} className="bg-ocean-900">{l.address}</option>)}
             </select>
           </div>
           <div>
