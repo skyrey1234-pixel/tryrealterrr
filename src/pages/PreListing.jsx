@@ -5,6 +5,8 @@ import { Button } from '@/components/ui/button';
 import Disclaimer, { inputCls } from '@/components/ui/disclaimer';
 import StrategyCards from '@/components/prelisting/StrategyCards';
 import RenovationOptions from '@/components/prelisting/RenovationOptions';
+import ReportUpload from '@/components/prelisting/ReportUpload';
+import CompsTable from '@/components/prelisting/CompsTable';
 import { Sparkles } from 'lucide-react';
 import { money } from '@/lib/commission';
 
@@ -15,7 +17,23 @@ export default function PreListing() {
   const [reports, setReports] = useState([]);
   const [active, setActive] = useState(null);
   const [busy, setBusy] = useState(false);
+  const [comps, setComps] = useState([]);
   const set = (k, v) => setForm((f) => ({ ...f, [k]: v }));
+
+  const applyExtract = (d) => {
+    setComps(d.comps || []);
+    setForm((f) => ({
+      ...f,
+      address: d.address || f.address,
+      city: d.city || f.city,
+      bedrooms: d.bedrooms ?? f.bedrooms,
+      bathrooms: d.bathrooms ?? f.bathrooms,
+      sqft: d.sqft ?? f.sqft,
+      year_built: d.year_built ?? f.year_built,
+      agent_opinion_of_value: d.estimated_value ?? f.agent_opinion_of_value,
+      condition_notes: [f.condition_notes, d.market_notes].filter(Boolean).join('\n'),
+    }));
+  };
 
   const load = async () => {
     const rows = await base44.entities.PreListingReport.list('-created_date', 30);
@@ -35,6 +53,7 @@ Beds/baths: ${form.bedrooms}/${form.bathrooms} · ${form.sqft} sqft · built ${f
 Agent opinion of value: ${form.agent_opinion_of_value || 'not provided'}
 Mortgage balance: ${form.mortgage_balance || 'not provided'}
 Condition notes: ${form.condition_notes || 'none'}
+Comparable sales imported from the agent's RPR/MLS report (treat these as the factual pricing backbone and anchor every list price to them; if empty, say pricing is preliminary until comps are pulled): ${comps.length ? JSON.stringify(comps) : 'none provided'}
 
 Produce: a market_summary paragraph, exactly three pricing strategies (Fast sale / Market value / Aspirational) with list_price, days_on_market_range, positioning, goal and tradeoffs; objective buyer_segments (based on property attributes, not demographics); preparation_steps; launch_strategy; marketing_preview; 3-4 renovation_options with cost_range, probable_effect, return_range and recommendation (ranges only, never guarantees); and seller_proceeds_notes explaining what still must be verified.`,
       add_context_from_internet: true,
@@ -73,11 +92,13 @@ Produce: a market_summary paragraph, exactly three pricing strategies (Fast sale
       year_built: Number(form.year_built) || undefined,
       agent_opinion_of_value: Number(form.agent_opinion_of_value) || undefined,
       mortgage_balance: Number(form.mortgage_balance) || undefined,
+      comps,
       ...res,
     });
     setActive(saved);
     setBusy(false);
     setForm(empty);
+    setComps([]);
     load();
   };
 
@@ -86,6 +107,7 @@ Produce: a market_summary paragraph, exactly three pricing strategies (Fast sale
       <PageHeader eyebrow="Listing Appointments" title="Pre-listing intelligence" subtitle="Walk into the appointment with pricing scenarios, preparation steps and a marketing preview already built." />
 
       <Panel className="p-6">
+        <ReportUpload onExtract={applyExtract} />
         <form onSubmit={generate} className="grid gap-3 sm:grid-cols-2">
           <input className={inputCls} placeholder="Property address" value={form.address} onChange={(e) => set('address', e.target.value)} required />
           <input className={inputCls} placeholder="City" value={form.city} onChange={(e) => set('city', e.target.value)} />
@@ -121,6 +143,8 @@ Produce: a market_summary paragraph, exactly three pricing strategies (Fast sale
               <p className="mt-3 text-xs text-neutral-400">Agent opinion of value: <span className="text-white">{money(active.agent_opinion_of_value)}</span> · Mortgage balance: <span className="text-white">{active.mortgage_balance ? money(active.mortgage_balance) : '—'}</span></p>
             )}
           </Panel>
+
+          <CompsTable comps={active.comps} />
 
           <StrategyCards strategies={active.strategies} />
 
