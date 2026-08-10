@@ -1,0 +1,74 @@
+{
+  "name": "Rental",
+  "type": "object",
+  "properties": {
+    "address": {
+      "type": "string"
+    },
+    "unit": {
+      "type": "string"
+    },
+    "city": {
+      "type": "string"
+    },
+    "property_type": {
+      "type": "string",
+      "enum": [
+        "single_family",
+        "condo",
+        "townhouse",
+        "duplex",
+        "apartment"
+      ],
+      "default": "single_family"
+    },
+    "bedrooms": {
+      "type": "number"
+    },
+    "bathrooms": {
+      "type": "number"
+    },
+    "monthly_rent": {
+      "type": "number"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "occupied",
+        "notice_given",
+        "vacant",
+        "turnover"
+      ],
+      "default": "occupied"
+    },
+    "tenant_name": {
+      "type": "string"
+    },
+    "tenant_email": {
+      "type": "string"
+    },
+    "tenant_phone": {
+      "type": "string"
+    },
+    "lease_start": {
+      "type": "string",
+      "format": "date"
+    },
+    "lease_end": {
+      "type": "string",
+      "format": "date"
+    },
+    "security_deposit": {
+      "type": "number"
+    },
+    "owner_name": {
+      "type": "string"
+    },
+    "notes": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "address"
+  ]
+}

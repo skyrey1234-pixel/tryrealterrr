@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Outlet, Link, useLocation } from 'react-router-dom';
-import { LayoutDashboard, Users, Home, QrCode, Sparkles, CalendarDays, Menu, X, LogOut, TrendingUp, ClipboardList, Heart, Activity, MessageCircle } from 'lucide-react';
+import { LayoutDashboard, Users, Home, QrCode, Sparkles, CalendarDays, Menu, X, LogOut, TrendingUp, ClipboardList, Heart, Activity, MessageCircle, KeyRound } from 'lucide-react';
 import { base44 } from '@/api/base44Client';
 
 const nav = [
@@ -12,6 +12,7 @@ const nav = [
   { to: '/transactions', label: 'Transactions', icon: Activity },
   { to: '/talking-property', label: 'Talking Property', icon: MessageCircle },
   { to: '/listings', label: 'Listings', icon: Home },
+  { to: '/rentals', label: 'Rentals', icon: KeyRound },
   { to: '/marketing', label: 'Listing Marketing', icon: Sparkles },
   { to: '/open-houses', label: 'Open Houses', icon: QrCode },
   { to: '/showings', label: 'Showings', icon: CalendarDays },

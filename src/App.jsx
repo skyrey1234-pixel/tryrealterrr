@@ -26,6 +26,7 @@ import PreListing from '@/pages/PreListing';
 import BuyerMatch from '@/pages/BuyerMatch';
 import Transactions from '@/pages/Transactions';
 import TalkingProperty from '@/pages/TalkingProperty';
+import Rentals from '@/pages/Rentals';
 
 const AuthenticatedApp = () => {
   const { isLoadingAuth, isLoadingPublicSettings, authError, navigateToLogin } = useAuth();
@@ -68,6 +69,7 @@ const AuthenticatedApp = () => {
           <Route path="/buyer-match" element={<BuyerMatch />} />
           <Route path="/transactions" element={<Transactions />} />
           <Route path="/listings" element={<Listings />} />
+          <Route path="/rentals" element={<Rentals />} />
           <Route path="/talking-property" element={<TalkingProperty />} />
           <Route path="/marketing" element={<Marketing />} />
           <Route path="/open-houses" element={<OpenHouses />} />
